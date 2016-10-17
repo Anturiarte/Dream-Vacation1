@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+ <link rel="stylesheet" type="text/css"
+         href="style2.css">
+ </head>
+<h1>My Dream Vacation</h1>
+<body>
+  <ul id="navbar">
+       <li class ="navitem"><a href="map_test.html">Home</a></li>
+       <li class ="navitem"><a href="maps.html">Paris</a></li>
+       <li class ="navitem"><a href="extra.html">Stavanger</a></li>
+       <li class ="navitem"><a class="active" href="israel.html">Israel</a></li>
+       <li class ="navitem"><a href="tokyo.html">Tokyo</a></li>
+        </ul>
+<h2> Israel</h2>
+<img src="israel2.jpeg" alt="is" style="width:100%;height:500px;">
+
+<div id="map" style="width:50%;height:400px;float:left"></div>
+<div id="parthenonMap" style="width:50%;height:400px;float:left"></div>
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(32.0457075,34.9821344),
+    zoom:15,
+    mapTypeId:google.maps.MapTypeId.HYBRID
+  };
+  var map = new google.maps.Map(mapCanvas,mapOptions);
+  var parthMapProp = {
+			center:new google.maps.LatLng(31.6268214,34.6137603),
+			zoom:8,
+			mapTypeId:google.maps.MapTypeId.HYBRID
+		  };
+		  //make sure you use the second map properties, not the original one
+		  var parthMap= new google.maps.Map(document.getElementById("parthenonMap"),parthMapProp);
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+}
+</script>
+<p> In Israel, I would travel too many cities throughout the country. First, I would visit Jerusalem which is the capital of Israel, and in Jerusalem I would visit the amazing Western wall, Tower of David, and the Jerusalam Biblical Zoo.
+   Next I would travel to the beautiful city if Tel Aviv which is a city next to the coast. In Tel Aviv I would visit the Tel Aviv Museum of Art, Bialik House, Tel Aviv Promenade, and the Tel Aviv Port. Lastly
+   I would visit Eilat which is a southern Israeli port and resort town on the Red Sea, near Jordan. In Eilat, I would swim in the amazing red sea and in the hotel pools. Image source: http://beabroda.com/israel/.
+
+ </p>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW4omOPIxrUMcp7iq66zi8tiNY2qdqJe4&callback=myMap"></script>
+</body>
+</html>

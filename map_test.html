@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+ <link rel="stylesheet" type="text/css"
+         href="style2.css">
+ </head>
+<h1>My Dream Vacation</h1>
+<body>
+  <ul id="navbar">
+       <li class ="navitem"><a class="active" href="map_test.">Home</a></li>
+       <li class ="navitem"><a href="maps.html">Paris</a></li>
+       <li class ="navitem"><a href="extra.html">Stavanger</a></li>
+       <li class ="navitem"><a href="israel.html">Israel</a></li>
+       <li class ="navitem"><a href="tokyo.html">Tokyo</a></li>
+        </ul>
+<h2> Dream Vacation Flight Route </h2>
+<div id="flight" style="width:100%;height:400px;"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW4omOPIxrUMcp7iq66zi8tiNY2qdqJe4"></script>
+
+<script>
+function myMap() {
+  var israel = new google.maps.LatLng(31.7964453,35.105319);
+
+
+  var stavanger = new google.maps.LatLng(58.983991,5.734863);
+
+
+  var amsterdam = new google.maps.LatLng(48.853977, 2.347411);
+
+
+  var london = new google.maps.LatLng(34.042703, -118.266777);
+
+
+  var tokyo = new google.maps.LatLng(35.691092,139.7071121);
+
+  var mapCanvas2 = document.getElementById("flight");
+  var mapOptions2 = {center: amsterdam, zoom: 2};
+  var map2 = new google.maps.Map(mapCanvas2,mapOptions2);
+  var marker1 = new google.maps.Marker({position:israel,});
+        marker1.setMap(map2);
+  var marker2 = new google.maps.Marker({position:stavanger,});
+        			marker2.setMap(map2);
+  var marker3 = new google.maps.Marker({position:amsterdam,});
+                    marker3.setMap(map2);
+  var marker4 = new google.maps.Marker({position:london,});
+                          marker4.setMap(map2);
+  var marker5 = new google.maps.Marker({position:tokyo,});
+                                marker5.setMap(map2);
+  var flightPath = new google.maps.Polyline({
+    path: [ tokyo, israel, stavanger, amsterdam, london],
+    strokeColor: "FF9933",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    mapTypeId:google.maps.MapTypeId.HYBRID
+  });
+  flightPath.setMap(map2);
+}
+google.maps.event.addDomListener(window, 'load', myMap);
+</script>
+<P> My Dream vacation would be traveling to many locations, not just one location. Since I would be traveling to many locations around the world,
+This is the Flight route I would take. It starts from Los Angeles because I live here, then it goes straight to the touristy city of Paris, France. The flight then goes straight to the beautiful city of Stavanger, Norway.
+ After having a blast in Norway, the flight would continue and fly across the Mediterranean sea straight to Israel aka "The Holy Land". After enjoying my time in Israel, the flight would continue flying to its last destination, the technologically advanced city of Tokyo, Japan.
+
+   </p>
+</body>
+</html>
